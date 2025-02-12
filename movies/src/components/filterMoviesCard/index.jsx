@@ -25,7 +25,7 @@ export default function FilterMoviesCard(props) {
   useEffect(() => {
     fetch(
       "https://api.themoviedb.org/3/genre/movie/list?api_key=" +
-        import.meta.env.VITE_TMDB_KEY
+        import.meta.env.VITE_APP_TMDB_KEY
     )
       .then(res => res.json())
       .then(json => {
@@ -40,8 +40,9 @@ export default function FilterMoviesCard(props) {
 
   const handleChange = (e, type, value) => {
     e.preventDefault()
-    // Completed later
-  };
+    props.onUserInput(type, value)   // NEW
+  }
+
   const handleTextChange = e => {
     handleChange(e, "name", e.target.value)
   }
@@ -62,25 +63,23 @@ export default function FilterMoviesCard(props) {
           Filter the movies.
         </Typography>
         <TextField
-      sx={{...formControl}}
-      id="filled-search"
-      label="Search field"
-      type="search"
-      variant="filled"
-      value={props.titleFilter}
-      onChange={handleTextChange}
-    />
-
+          sx={{...formControl}}
+          id="filled-search"
+          label="Search field"
+          type="search"
+          variant="filled"
+          value={props.titleFilter}
+          onChange={handleTextChange}
+        />
         <FormControl sx={{...formControl}}>
           <InputLabel id="genre-label">Genre</InputLabel>
           <Select
-    labelId="genre-label"
-    id="genre-select"
-    defaultValue=""
-    value={props.genreFilter}
-    onChange={handleGenreChange}
-  >
-
+            labelId="genre-label"
+            id="genre-select"
+            defaultValue=""
+            value={props.genreFilter}
+            onChange={handleGenreChange}
+          >
             {genres.map((genre) => {
               return (
                 <MenuItem key={genre.id} value={genre.id}>
