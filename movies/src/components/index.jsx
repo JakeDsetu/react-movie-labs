@@ -13,6 +13,7 @@ import IconButton from "@mui/material/IconButton";
 import Grid from "@mui/material/Grid2";
 import img from '../../images/film-poster-placeholder.png'
 
+
 export default function MovieCard(props) {
   const movie = props.movie;
   return (
