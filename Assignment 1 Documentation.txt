@@ -16,3 +16,6 @@ Extending the App:
   - /api/tmdb-api.jsx (line 142)
   - /siteHeader/index.jsx (line 32)
   - main.jsx (line 10 + 42)
+
+- Added Alternative Titles in the page for each movie.
+  - /api/tmdb-api.jsx (line 37)

@@ -2,7 +2,8 @@ import React from "react";
 import { useParams } from 'react-router';
 import MovieDetails from "../components/movieDetails/";
 import PageTemplate from "../components/templateMoviePage";
-import { getMovie } from '../api/tmdb-api'
+import { getMovie } from '../api/tmdb-api';
+import { getAltTitles } from "../api/tmdb-api";
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../components/spinner'
 // import useMovie from "../hooks/useMovie";   Redundant
