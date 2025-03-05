@@ -1,0 +1,16 @@
+Extending the App:
+- Added "Top Rated" Page.
+  - added /pages/topRatedMoviesPage.jsx
+  - /api/tmdb-api.jsx (line 110)
+  - /siteHeader/index.jsx (line 30 - may change slightly)
+  - main.jsx (line 8 + line 40)
+
+- Added "Now Playing" Page.
+  - added /pages/nowPlayingMoviesPage.jsx
+  - /api/tmdb-api.jsx (line 126)
+  - /siteHeader/index.jsx (line 31)
+  - main.jsx (line 9 + line 41)
+
+git add -A
+git commit -m "Assignment 1: Added 'Now Playing' page." 
+git push origin main

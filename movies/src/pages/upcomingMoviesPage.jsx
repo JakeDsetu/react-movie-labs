@@ -2,14 +2,14 @@ import React from "react";
 import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../components/spinner';
-import { getUpcoming } from "../api/tmdb-api";
+import { getNowPlaying } from "../api/tmdb-api";
 import AddToPlaylistIcon from '../components/cardIcons/playlistAdd'
 
 const HomePage = (props) => {
 
   const { data, error, isPending, isError  } = useQuery({
-    queryKey: ['upcoming'],
-    queryFn: getUpcoming,
+    queryKey: ['nowplaying'],
+    queryFn: getNowPlaying,
   })
   
   if (isPending) {
