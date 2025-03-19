@@ -1,6 +1,7 @@
 import React from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
@@ -9,6 +10,16 @@ import { useNavigate, useParams } from "react-router";
 import { getAltTitles } from "../../api/tmdb-api";
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../../components/spinner';
+
+const root = {
+  display: "flex",
+  justifyContent: "center",
+  flexWrap: "wrap",
+  listStyle: "none",
+  padding: 1.5,
+  margin: 0,
+};
+const chip = { margin: 0.5 };
 
 const MovieHeader = (props) => {
   const movie = props.movie;
@@ -27,9 +38,10 @@ const MovieHeader = (props) => {
     if (isError) {
       return <h1>{error.message}</h1>;
     }
-    console.log(alttitles)
+    console.log(alttitles.titles)
 
   return (
+    <>
     <Paper 
         component="div" 
         sx={{
@@ -57,6 +69,20 @@ const MovieHeader = (props) => {
         <ArrowForwardIcon color="primary" fontSize="large" />
       </IconButton>
     </Paper>
+    <Paper 
+    component="ul"
+    sx= {{...root}}
+  >
+    <li>
+      <Chip label="Alternative Titles" color="primary" />
+    </li>
+    {alttitles.titles.map((g) => (
+      <li key={g.title}>
+        <Chip label={g.title} />
+      </li>
+    ))}
+    </Paper>
+    </>
   );
 };
 

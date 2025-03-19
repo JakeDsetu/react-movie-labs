@@ -19,3 +19,13 @@ Extending the App:
 
 - Added Alternative Titles in the page for each movie.
   - /api/tmdb-api.jsx (line 37)
+  - /src/components/headerMovie/index.jsx (lines 14-22, 29-32 and 72-85)
+
+
+git add -A
+git commit -m "Assignment 1: Displaying alternative titles in movie headers, started with style changing"
+git push origin main
+
+
+
+
