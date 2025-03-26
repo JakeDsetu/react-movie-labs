@@ -19,6 +19,7 @@ const SiteHeader = ({ history }) => {
   const open = Boolean(anchorEl);
 
   const theme = useTheme();
+  console.log(theme);
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ const SiteHeader = ({ history }) => {
 
   return (
     <>
-      <AppBar position="fixed" color="secondary">
+      <AppBar position="fixed" sx={{ backgroundColor:theme.palette.primary.light }}>
         <Toolbar>
           <Typography variant="h4" sx={{ flexGrow: 1 }}>
             TMDB Client

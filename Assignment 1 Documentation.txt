@@ -21,11 +21,16 @@ Extending the App:
   - /api/tmdb-api.jsx (line 37)
   - /src/components/headerMovie/index.jsx (lines 14-22, 29-32 and 72-85)
 
+Extend the Functionality:
+ - Added caching to all new pages:
+  - /src/pages/topRatedMoviesPage (lines 10-13)
+  - /src/pages/popularMoviesPage (lines 10-13)
+  - /src/pages/nowPlayingMoviesPage (lines 10-13)
+
+Additional Work:
+
+
 
 git add -A
-git commit -m "Assignment 1: Displaying alternative titles in movie headers, started with style changing"
+git commit -m "Assignment 1: Pagination partially working."
 git push origin main
-
-
-
-
